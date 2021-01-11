@@ -25,7 +25,7 @@ tes.on('channel.update', (userId, userLogin, userName, title, language, category
 ## Event Types
 Event type names can be found in the Twitch EventSub documentation [here](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types).  Events and their respective parameters can be found in the Twitch EventSub documentation [here](https://dev.twitch.tv/docs/eventsub/eventsub-reference#events).  When creating a handler for any event, the order of arguments to the handler function is reflected in the order they are listed in the documentation.
 
-For example, the `channel.ban` [event](https://dev.twitch.tv/docs/eventsub/eventsub-reference#channel-ban-event) has four parameters `user_id, user_name, broadcaster_user_id, broadcaster_user_name`.  The event handler would be created like so:
+For example, the `channel.ban` [event](https://dev.twitch.tv/docs/eventsub/eventsub-reference#channel-ban-event) has six parameters `user_id, user_login, user_name, broadcaster_user_id, broadcaster_user_login, broadcaster_user_name`.  The event handler would be created like so:
 ```js
 tes.on('channel.ban', (userId, userLogin, userName, broadcasterId, broadcasterLogin, broadcasterName) => {
   // do your things here
